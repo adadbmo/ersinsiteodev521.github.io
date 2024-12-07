@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gizlilik Politikası</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #fff; /* Sabit Beyaz Arka Plan */
+    }
+
+    nav ul {
+      list-style-type: none;
+      display: flex;
+      justify-content: space-around;
+      background-color: #333;
+      margin: 0;
+      padding: 10px 0;
+    }
+
+    nav ul li {
+      display: inline;
+    }
+
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      padding: 10px 15px;
+    }
+
+    nav ul li a:hover {
+      background-color: #575757;
+    }
+
+    .content {
+      padding: 50px;
+      background-color: #fff; /* Başlangıçta Beyaz Arka Plan */
+      opacity: 0; /* Başlangıçta görünürlük sıfır */
+      transition: opacity 1s ease-in-out; /* Fade efekti ekledik */
+    }
+
+    .content.visible {
+      opacity: 1; /* Görünür olduğunda tam opaklık */
+    }
+
+    footer {
+      background-color: #333;
+      color: white;
+      text-align: center;
+      padding: 20px;
+    }
+
+    footer .social-icons a {
+      margin: 0 10px;
+      color: white;
+      text-decoration: none;
+    }
+
+    footer .social-icons a:hover {
+      color: #57a0d3;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Menü -->
+  <nav>
+    <ul>
+      <li><a href="index.html">Ana Sayfa</a></li>
+      <li><a href="about.html">Hakkımda</a></li>
+      <li><a href="portfolio.html">Portföy</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="contact.html">İletişim</a></li>
+    </ul>
+  </nav>
+
+  <!-- Ana içerik -->
+  <main>
+    <div id="privacy-policy-content" class="content">
+      <h1>Gizlilik Politikası</h1>
+      <p>Web sitemizi ziyaret ettiğinizde, kişisel verilerinizi nasıl topladığımız, kullandığımız ve koruduğumuz hakkında bilgi edinmek için bu Gizlilik Politikasını okumanız önemlidir. Gizliliğinizi korumak bizim için çok önemlidir.</p>
+
+      <h2>Toplanan Bilgiler</h2>
+      <p>Web sitemizi kullandığınızda aşağıdaki türde verileri toplayabiliriz:</p>
+      <ul>
+        <li><strong>Kişisel Veriler:</strong> Adınız, soyadınız, e-posta adresiniz, telefon numaranız gibi bilgiler.</li>
+        <li><strong>Teknik Veriler:</strong> IP adresiniz, tarayıcı türünüz, kullanılan cihaz, siteye erişim saati gibi bilgiler.</li>
+        <li><strong>Çerezler:</strong> Web sitemizin işlevlerini geliştirmek için çerezler kullanılır.</li>
+      </ul>
+
+      <h2>Bilgilerin Kullanımı</h2>
+      <p>Toplanan verileri aşağıdaki amaçlarla kullanıyoruz:</p>
+      <ul>
+        <li>Web sitemizin hizmetlerini sağlamak ve geliştirmek.</li>
+        <li>İletişim kurarak size geri dönüş yapmak.</li>
+        <li>Geri bildirimlerinizi almak ve sitenin performansını analiz etmek.</li>
+      </ul>
+
+      <h2>Çerezler</h2>
+      <p>Web sitemiz, kullanıcı deneyimini geliştirmek amacıyla çerezler kullanmaktadır. Çerezlerin kullanımını kabul ederek sitemizi kullanmaya devam edebilirsiniz. Tarayıcınızın ayarlarından çerez kullanımını yönetebilirsiniz.</p>
+
+      <h2>Bilgilerin Güvenliği</h2>
+      <p>Web sitemiz, kişisel verilerinizi korumak için endüstri standartlarında güvenlik önlemleri alır. Ancak, internet üzerinden veri iletiminin tamamen güvenli olduğunu garanti edemeyiz.</p>
+
+      <h2>Üçüncü Taraflarla Paylaşım</h2>
+      <p>Topladığımız bilgileri, yalnızca yasal gereklilikler doğrultusunda veya güvenlik amacıyla üçüncü şahıslarla paylaşabiliriz.</p>
+
+      <h2>Haklarınız</h2>
+      <p>Kişisel verilerinizle ilgili olarak veri erişim, düzeltme, silme veya kısıtlama taleplerinde bulunabilirsiniz. Bu talepler için bizimle iletişime geçebilirsiniz.</p>
+
+      <h2>Değişiklikler</h2>
+      <p>Bu gizlilik politikası zaman zaman güncellenebilir. Politika değişikliklerini sitemizde duyuracağız ve geçerli tarih bilgisini burada belirteceğiz.</p>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2024 Kişisel Portföy - Tüm hakları saklıdır</p>
+    <div class="social-icons">
+      <a href="https://twitter.com" target="_blank">Twitter</a>
+      <a href="https://linkedin.com" target="_blank">LinkedIn</a>
+      <a href="https://github.com" target="_blank">GitHub</a>
+    </div>
+  </footer>
+
+  <script>
+    // Intersection Observer benzeri bir davranışı sağlamak için
+    // JavaScript ile görünürlük değişimini kontrol edeceğiz.
+    document.addEventListener('DOMContentLoaded', function () {
+      const content = document.getElementById('privacy-policy-content');
+      
+      // Bu fonksiyon, içerik görünür olduğunda arka planı değiştirecek.
+      const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            content.classList.add('visible'); // Fade efekti ile görünür yapar
+          } else {
+            content.classList.remove('visible'); // Fade efekti ile kaybolmasını sağlar
+          }
+        });
+      }, { threshold: 0.5 });  // %50 görünürlük için tetiklenir.
+
+      observer.observe(content);
+    });
+  </script>
+
+</body>
+</html>
